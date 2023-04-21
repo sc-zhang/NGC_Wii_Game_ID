@@ -1,12 +1,13 @@
 ﻿Public Class frmMain
     Private fileName As String
-    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles mnuOpen.Click
+    Private Sub mnuOpen_Click(sender As Object, e As EventArgs) Handles mnuOpen.Click
         On Error GoTo Err
         txtOldName.Text = ""
         txtOldID.Text = ""
 
         cdlOpen.Multiselect = False
         cdlOpen.Filter = "Any file(*.*)|*.*"
+        cdlOpen.FileName = ""
         cdlOpen.ShowDialog()
 
         If cdlOpen.FileName <> "" Then
